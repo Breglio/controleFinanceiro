@@ -1,70 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Consultar Balanco</title>
-    <link rel="stylesheet" href="/static/css/consultar_balanco.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultar Balanço</title>
+    <link rel="stylesheet" href="/static/css/consultar_balanco.css">
     <link rel="stylesheet" href="/static/css/componentes/cabecalho.css">
     <script defer src="app.js"></script>
-  </head>
-  <body>
-
+</head>
+<body>
     <header class="cabecalho">
-      <nav class="cabecalho__menu">
-          <button class="menu-toggle" aria-label="Toggle menu">
-              ☰
-          </button>
-          <div class="menu-links">
-            <a class="cabecalho__menu__link" href="login">Login</a>
+        <nav class="cabecalho__menu">
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <div class="menu-links">
+                <a class="cabecalho__menu__link" href="login">Login</a>
                 <a class="cabecalho__menu__link" href="cadastro_nota">Cadastrar Nota</a>
                 <a class="cabecalho__menu__link" href="cadastro_usuario">Cadastrar Usuario</a>
-                <a class="cabecalho__menu__link" href="consultar balanço">Consultar Balanço</a>
-                <a class="cabecalho__menu__link" href="solicitar relatório">Solicitar Relatório </a>
-          </div>
-      </nav>
-  </header>
+                <a class="cabecalho__menu__link" href="consultar_balanco">Consultar Balanço</a>
+                <a class="cabecalho__menu__link" href="solicitar_relatorio">Solicitar Relatório</a>
+            </div>
+        </nav>
+    </header>
 
-   <h2>Consultar Balanço</h2>
-
-
-    <form
-      action="submit_balanço"
-      method="POST"
-      data-form
-    >
-    <div>
-      <input
-      type="checkbox"
-      id="Ativos"
-      name="Balanço"
-      value="Ativos"
-     <label for="actives">Ativos </label>
-    </div>
-    <div> 
-      <input type="checkbox" id="Passivos" name="Balanço" value="Passivos" />
-      <label for="Passives" > Passivos </label>
-     </div>
-   
-    <div class="input-group">
-      <label for="data">Data</label>
-      <input type="date" name="data" id="data" required />
-    </div>
-    <div class="input-group">
-      <input type="submit" value="Consultar Balanço">
-     
-    </div>
+    <h2>Consultar Balanço</h2>
+    <form action="submit_balanco" method="POST" data-form>
+        <div>
+            <input type="checkbox" id="ativos" name="balanco" value="ativos" />
+            <label for="ativos">Ativos</label>
+                <div>
+            <input type="checkbox" id="passivos" name="balanco" value="passivos" />
+            <label for="passivos">Passivos</label>
+        </div>
+        <div class="input-group">
+            <label for="data_inicio">Data Início</label>
+            <input type="date" name="data_inicio" id="data_inicio" required />
+        </div>
+        <div class="input-group">
+            <label for="data_fim">Data Fim</label>
+            <input type="date" name="data_fim" id="data_fim" required />
+        </div>
+        <div class="input-group">
+            <input type="submit" value="Consultar Balanço">
+        </div>
     </form>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-          const menuToggle = document.querySelector('.menu-toggle');
-          const menuLinks = document.querySelector('.menu-links');
 
-          menuToggle.addEventListener('click', function() {
-              menuLinks.classList.toggle('active');
-          });
-      });
-  </script>
-  </body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const menuLinks = document.querySelector('.menu-links');
+            menuToggle.addEventListener('click', function() {
+                menuLinks.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
 </html>
